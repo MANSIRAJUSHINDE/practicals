@@ -1,0 +1,32 @@
+https://orgfarm-0e407b9926-dev-ed--c.develop.vf.force.com/apex/LoginPage
+
+
+public class LoginController {
+    public String username { get; set; }
+    public String password { get; set; }
+    public String message { get; set; }
+
+    public PageReference login() {
+        if (username == 'admin' && password == '1234') {
+            message = 'Login successful';
+        } else {
+            message = 'Invalid login';
+        }
+        return null;
+    }
+}
+
+
+
+<apex:page controller="LoginController">
+    <apex:form >
+        <apex:pageBlock title="Custom Login Form">
+            <apex:pageBlockSection columns="2">
+                <apex:inputText label="Username" value="{!username}" />
+                <apex:inputSecret label="Password" value="{!password}" />
+            </apex:pageBlockSection>
+            <apex:commandButton value="Login" action="{!login}" />
+            <apex:outputText value="{!message}" style="color:red; font-weight:bold;" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
