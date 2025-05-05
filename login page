@@ -1,6 +1,7 @@
 https://orgfarm-0e407b9926-dev-ed--c.develop.vf.force.com/apex/LoginPage
 
-
+1.	Go to File > New > Apex Class   
+LoginController
 public class LoginController {
     public String username { get; set; }
     public String password { get; set; }
@@ -17,7 +18,8 @@ public class LoginController {
 }
 
 
-
+1.	Go to File > New > Visualforce Page
+LoginPage
 <apex:page controller="LoginController">
     <apex:form >
         <apex:pageBlock title="Custom Login Form">
